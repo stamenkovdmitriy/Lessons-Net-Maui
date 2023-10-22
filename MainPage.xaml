@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lessons_Net_Maui.MainPage"
+             BackgroundColor="#293139">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#3E6C95"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="15">
+            <!--#1-->
+            <VerticalStackLayout
+                Spacing="8" Margin="8">
+                <Label Text="#1"
+                       FontSize="35" TextColor="#E9A36B"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Please log in" FontSize="30" TextColor="AntiqueWhite"/>
+                <Label Text="Username" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="2"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Entry/>
+                <Label Text="Password" />
+                <Entry IsPassword="True"/>
+                <Button Text="Log in"
+                        Clicked="Button_Clicked"/>
+            </VerticalStackLayout>
+
+            <!--#2-->
+            <VerticalStackLayout
+                Spacing="8" Margin="8">
+                <Label Text="#2"
+                       FontSize="35" TextColor="#E9A36B"
+                       HorizontalOptions="Center"/>
+
+                <Label x:Name="currentLabel"
+                       Text="Current count: 0" />
+                <Button Text="Count +"
+                        Clicked="Button_Clicked_1"/>
+
+            </VerticalStackLayout>
+
+            <!--#3-->
+            <VerticalStackLayout x:Name="noteStack"
+                                 Spacing="8" Margin="8" >
+                <Label Text="#3"
+                       FontSize="35" TextColor="#E9A36B"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Notes"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"/>
+                <Editor x:Name="editor"
+                        Placeholder="Enter your note"
+                        TextColor="White"
+                        HeightRequest="100"/>
+                <Grid
+                    ColumnDefinitions="Auto,18,Auto"
+                    HorizontalOptions="Center">
+                    <Button x:Name="saveButton" Text="Save"
+                            WidthRequest="80"
+                            Clicked="SaveButton_Clicked"/>
+                    <Button x:Name="deleteButton" Text="Delete"
+                            Grid.Column="2"
+                            WidthRequest="80"
+                            Clicked="DeleteButton_Clicked"/>
+                </Grid>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
