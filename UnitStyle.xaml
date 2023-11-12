@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lessons_Net_Maui.UnitStyle"
+             Title="UnitStyle"
+             BackgroundColor="#292E34">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="BackgroundColor" Value="#528ABB"/>
+            <Setter Property="WidthRequest" Value="140"/>
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#9D6A25"/>
+            <Setter Property="WidthRequest" Value="80"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style x:Key="Header" TargetType="Label">
+            <Setter Property="BackgroundColor" Value="#16D1B9"/>
+            <Setter Property="WidthRequest" Value="240"/>
+            <Setter Property="HeightRequest" Value="80"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="HeaderBtn" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#16D1B9"/>
+            <Setter Property="WidthRequest" Value="140"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style x:Key="UnitStyleDown" TargetType="VisualElement">
+            <Setter Property="BackgroundColor" Value="#62446A"/>
+            <Setter Property="WidthRequest" Value="140"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout
+        Spacing="8"
+        Padding="8">
+        <Label
+            Text="Welcome to .NET MAUI!"
+            Style="{StaticResource Header}"/>
+        <Label
+            Text="Welcome to .NET MAUI!"/>
+        <Label
+            Text="Welcome to .NET MAUI!"/>
+        <Label
+            Text="Welcome to .NET MAUI!"
+            Style="{StaticResource UnitStyleDown}"/>
+        <Button
+            Text="Button"
+            Style="{StaticResource HeaderBtn}"/>
+        <Button
+            Text="Button"/>
+        <Button
+            Text="Button"/>
+        <Button
+            Text="Button"
+            Style="{StaticResource UnitStyleDown}"/>
+    </VerticalStackLayout>
+</ContentPage>

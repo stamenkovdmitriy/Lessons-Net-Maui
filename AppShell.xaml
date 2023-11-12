@@ -4,11 +4,97 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Lessons_Net_Maui"
-    Shell.FlyoutBehavior="Disabled">
+    FlyoutIcon="marker_green.png">
+
+
+    <Shell.FlyoutHeader>
+        <HorizontalStackLayout
+            BackgroundColor="#153939">
+            <Image Source="marker_blue.png"
+                   WidthRequest="40"
+                   HeightRequest="40"/>
+            <Label Text="HEADER"
+                   TextColor="White"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="100"/>
+        </HorizontalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <TabBar>
+        <Tab Title="TAB"
+             Icon="marker_green.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:FirstPage}"/>
+        </Tab>
+        <Tab Title="TAB2"
+             Icon="marker_green.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+    </TabBar>
+    <FlyoutItem
+        Title="Flyout Item"
+        Icon="marker_yellow.png">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+    <FlyoutItem
+        Title="Flyout Item2"
+        Icon="marker_yellow.png">
+        <ShellContent
+            Title="FirstPage"
+            ContentTemplate="{DataTemplate local:FirstPage}"
+            Route="FirstPage" />
+    </FlyoutItem>
 
     <ShellContent
         Title="Home"
+        Icon="marker_blue.png"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    <ShellContent
+        Title="FirstPage"
+        Icon="marker_blue.png"
+        ContentTemplate="{DataTemplate local:FirstPage}"
+        Route="FirstPage" />
+    <ShellContent
+        Title="Note"
+        Icon="marker_green.png"
+        ContentTemplate="{DataTemplate local:Note}"
+        Route="Note" />
+    <ShellContent
+        Title="Layout"
+        Icon="marker_yellow.png"
+        ContentTemplate="{DataTemplate local:Layout}"
+        Route="Layout" />
+    <ShellContent
+        Title="Resource"
+        Icon="marker_blue.png"
+        ContentTemplate="{DataTemplate local:GetSetResource}"
+        Route="Resource" />
+    <ShellContent
+        Title="Unit Style"
+        Icon="marker_blue.png"
+        ContentTemplate="{DataTemplate local:UnitStyle}"
+        Route="UnitStyle"/>
+
+    <Shell.FlyoutFooter>
+        <HorizontalStackLayout
+            BackgroundColor="#1C1E1E">
+            <Image Source="marker_green.png"
+                   WidthRequest="40"
+                   HeightRequest="40"/>
+            <Label Text="FOOTER"
+                   BackgroundColor="#1C1E1E"
+                   TextColor="NavajoWhite"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="100"/>
+        </HorizontalStackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>
