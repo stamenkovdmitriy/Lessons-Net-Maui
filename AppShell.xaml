@@ -20,20 +20,20 @@
                    WidthRequest="100"/>
         </HorizontalStackLayout>
     </Shell.FlyoutHeader>
+    <!--<TabBar>
+    <Tab Title="TAB"
+    Icon="marker_green.png">
+    <ShellContent
+    ContentTemplate="{DataTemplate local:FirstPage}"/>
+    </Tab>
+    <Tab Title="TAB2"
+    Icon="marker_green.png">
+    <ShellContent
+    ContentTemplate="{DataTemplate local:MainPage}"
+    Route="MainPage" />
+    </Tab>
+    </TabBar>-->
 
-    <TabBar>
-        <Tab Title="TAB"
-             Icon="marker_green.png">
-            <ShellContent
-                ContentTemplate="{DataTemplate local:FirstPage}"/>
-        </Tab>
-        <Tab Title="TAB2"
-             Icon="marker_green.png">
-            <ShellContent
-                ContentTemplate="{DataTemplate local:MainPage}"
-                Route="MainPage" />
-        </Tab>
-    </TabBar>
     <FlyoutItem
         Title="Flyout Item"
         Icon="marker_yellow.png">
@@ -81,6 +81,10 @@
         Icon="marker_blue.png"
         ContentTemplate="{DataTemplate local:UnitStyle}"
         Route="UnitStyle"/>
+    <ShellContent
+        Title="Data Base"
+        ContentTemplate="{DataTemplate local:DataBasePage}"
+        Route="DataBasePage"/>
 
     <Shell.FlyoutFooter>
         <HorizontalStackLayout
