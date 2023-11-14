@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mycode="clr-namespace:Lessons_Net_Maui"
+             BackgroundColor="#293139"
+             x:Class="Lessons_Net_Maui.Layout"
+             Title="Layout">
+    
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#3E6C95"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Spacing="8">
+
+            <Label Text="LayoutOptions"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   Margin="16"
+                   FontSize="24"/>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="8">
+                <Label Text="Horizontal"
+                       VerticalTextAlignment="Center"
+                       TextColor="White"/>
+                <Button x:Name="horizontalStart" Text="Start"
+                        Clicked="horizontalStart_Clicked"/>
+                <Button x:Name="horizontalCentr" Text="Centr"
+                        Clicked="horizontalCentr_Clicked"/>
+                <Button x:Name="horizontalEnd" Text="End"
+                        Clicked="horizontalEnd_Clicked"/>
+                <Button x:Name="horizontalFill" Text="Fill"
+                        Clicked="horizontalFill_Clicked"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="8">
+                <Label Text="Vertical"
+                       VerticalTextAlignment="Center"
+                       TextColor="White"/>
+                <Button x:Name="verticalStart" Text="Start"
+                        Clicked="verticalStart_Clicked"/>
+                <Button x:Name="verticalCentr" Text="Centr"
+                        Clicked="verticalCentr_Clicked"/>
+                <Button x:Name="verticalEnd" Text="End"
+                        Clicked="verticalEnd_Clicked"/>
+                <Button x:Name="verticalFill" Text="Fill"
+                        Clicked="verticalFill_Clicked"/>
+            </HorizontalStackLayout>
+
+            <Grid
+                HorizontalOptions="Center"
+                HeightRequest="300"
+                WidthRequest="300"
+                BackgroundColor="#4C4946"
+                Margin="8">
+                <Label x:Name="labelHello" Text="Hello!!!"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       Background="#256F66"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontSize="40"
+                       WidthRequest="200"
+                       HeightRequest="100"/>
+            </Grid>
+
+            <Label Text="Calculator"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   Margin="8"
+                   FontSize="28"/>
+
+            <Label Text="StackLayout"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   Margin="8"
+                   FontSize="24"/>
+
+            <VerticalStackLayout
+                Spacing="8" Padding="8">
+
+                <HorizontalStackLayout
+                    Spacing="8">
+                    <Label Text="Bill"
+                           VerticalOptions="Center"
+                           WidthRequest="100"/>
+                    <Entry x:Name="billInput" Placeholder="Enter Amount" Keyboard="Numeric"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Spacing="8">
+                    <Label Text="Tip"
+                           VerticalOptions="Center"
+                           WidthRequest="100"/>
+                    <Label x:Name="tipOutput" Text="0.00"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Spacing="8">
+                    <Label Text="Total"
+                           VerticalOptions="Center"
+                           WidthRequest="100"/>
+                    <Label x:Name="totalOutput" Text="0.00"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Spacing="8">
+                    <Label Text="Tip Percentage"
+                           WidthRequest="100"/>
+                    <Label x:Name="tipPercent" Text="15%" />
+                </HorizontalStackLayout>
+
+
+                <Slider x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15" />
+
+                <HorizontalStackLayout
+                    Spacing="8"
+                    HorizontalOptions="Center">
+                    <Button Text="15%" Clicked="OnNormalTip"
+                            WidthRequest="120"/>
+                    <Button Text="20%" Clicked="OnGenerousTip"
+                            WidthRequest="120"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Spacing="8"
+                    HorizontalOptions="Center">
+                    <Button x:Name="roundDown" Text="Round Down"
+                            WidthRequest="120"/>
+                    <Button x:Name="roundUp"   Text="Round Up"
+                            WidthRequest="120"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            <Label Text="Grid"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   Margin="16"
+                   FontSize="24"/>
+
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                Spacing="8">
+
+                <Grid
+                    RowDefinitions="*,*,*,*,*,*,*,*"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="8"
+                    RowSpacing="8">
+
+                    <Label Text="Bill"
+                           VerticalOptions="Center"
+                           WidthRequest="100"
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                    <Entry x:Name="billInputGrid"
+                           Placeholder="Enter Amount" Keyboard="Numeric"
+                           Grid.Row="0"
+                           Grid.Column="1"/>
+
+                    <Label Text="Tip"
+                           VerticalOptions="Center"
+                           WidthRequest="100"
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+                    <Label x:Name="tipOutputGrid" Text="0.00"
+                           Grid.Row="1"
+                           Grid.Column="1"/>
+
+                    <Label Text="Total"
+                           VerticalOptions="Center"
+                           WidthRequest="100"
+                           Grid.Row="2"
+                           Grid.Column="0"/>
+                    <Label x:Name="totalOutputGrid" Text="0.00"
+                           Grid.Row="2"
+                           Grid.Column="1"/>
+
+                    <Label Text="Tip Percentage"
+                           WidthRequest="100"
+                           Grid.Row="3"
+                           Grid.Column="0"/>
+                    <Label x:Name="tipPercentGrid" Text="15%"
+                           Grid.Row="3"
+                           Grid.Column="1"/>
+
+                    <Slider x:Name="tipPercentSliderGrid"
+                            Minimum="0" Maximum="100" Value="15"
+                            Grid.Row="4" Grid.Column="0"
+                            Grid.ColumnSpan="2"/>
+
+                    <Button Text="15%" Clicked="OnNormalTip"
+                            WidthRequest="120"
+                            Grid.Row="5"
+                            Grid.Column="0"/>
+                    <Button Text="20%" Clicked="OnGenerousTip"
+                            WidthRequest="120"
+                            Grid.Row="5"
+                            Grid.Column="1"/>
+
+                    <Button x:Name="roundDownGrid" Text="Round Down"
+                            WidthRequest="120"
+                            Grid.Row="6"
+                            Grid.Column="0"/>
+                    <Button x:Name="roundUpGrid"   Text="Round Up"
+                            WidthRequest="120"
+                            Grid.Row="6"
+                            Grid.Column="1"/>
+                </Grid>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
